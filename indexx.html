@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espaço Vazio</title>
+    <title>CONTADOR DO BATMAN</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="gotham-overlay"></div>
+    <div class="bat-signal"></div>
     <div class="particles" id="particles"></div>
     
     <div class="container">
-        <h1>Essência</h1>
+        <h1 data-text="BATMAN">BATMAN</h1>
         <div class="line"></div>
-        <p>Menos é mais quando mais é demais. Encontre beleza na simplicidade e significado no vazio.</p>
-        <button class="btn" id="exploreBtn">Explorar</button>
+        <p class="subtitle">CLIQUE. VIGIE. PROTEJA.</p>
+        <div class="counter" id="counter">0</div>
+        <div class="button-group">
+            <button class="btn" id="clickBtn">BAT-CLICK</button>
+            <button class="btn reset" id="resetBtn">MORCEGO-ZERAR</button>
+        </div>
     </div>
 
+    <audio id="batSound" src="https://www.soundjay.com/mechanical/sounds/batarang-01.mp3" preload="auto"></audio>
     <script src="script.js"></script>
 </body>
 </html>
