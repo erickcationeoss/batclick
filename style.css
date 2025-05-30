@@ -1,0 +1,117 @@
+/* CSS Minimalista e Diferenciado */
+:root {
+    --primary: #0a0a0a;
+    --secondary: #f0f0f0;
+    --accent: #ff3366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary);
+    color: var(--secondary);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='6' fill='none' stroke='%23ff3366' stroke-width='2'/></svg>") 8 8, auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 2s forwards 0.5s;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s;
+}
+
+.btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efeito de distorção no hover */
+.container:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Linha decorativa */
+.line {
+    height: 1px;
+    width: 100px;
+    background: var(--accent);
+    margin: 2rem auto;
+    opacity: 0;
+    animation: fadeIn 2s forwards 0.8s;
+}
